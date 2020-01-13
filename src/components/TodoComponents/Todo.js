@@ -9,9 +9,10 @@ const Todo = ({ item, completeTodo }) => {
         cursor: pointer;
         position: relative;
         border-radius: 18px;
-        padding: 2px;
+        padding: 4px;
         box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48), -4px -2px 16px #FFFFFF;
         -webkit-tap-highlight-color: transparent;
+        margin-bottom: 1.6rem;
 
         .inner-wrapper {
             width: 100%;
@@ -20,9 +21,14 @@ const Todo = ({ item, completeTodo }) => {
             transition: all .2s ease-in-out;
             display: grid;
             place-items: center;
+            text-align: center;
+            padding: 1rem;
 
             span {
                 font-size: 2.2rem;
+                user-select: none;
+                transition: all .2s ease-in-out;
+                text-shadow: 2px 2px 2px #d6e1ef99, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
             }
         }
 

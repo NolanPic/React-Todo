@@ -4,6 +4,7 @@ export const Main = styled.div`
     max-width: 400px;
     width: 80%;
     margin: 0 auto;
+    height: 100vh;
 `;
 
 export const StyledTodoForm = styled.form`
