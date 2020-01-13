@@ -3,12 +3,16 @@ import Todo from './Todo';
 
 const TodoList = props => {
 
-    const { todoItems } = props;
+    const { todoItems, completeTodo } = props;
 
     return (
         <ul>
             {todoItems.map(item => (
-                <Todo key={item.id} item={item} />
+                <Todo
+                    key={item.id}
+                    item={item}
+                    completeTodo={completeTodo}
+                />
             ))}
         </ul>
     );

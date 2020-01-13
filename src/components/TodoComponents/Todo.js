@@ -2,10 +2,10 @@ import React from 'react';
 
 const Todo = props => {
 
-    const { item } = props;
+    const { item, completeTodo } = props;
 
     return (
-        <li>{item.task}</li>
+        <li onClick={() => completeTodo(item.id)}>{item.task}</li>
     );
 };
 

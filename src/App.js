@@ -19,8 +19,20 @@ class App extends Component {
       id: Date.now(),
       completed: false
     };
+
     this.setState({
       todoItems: [ ...this.state.todoItems, newTodo ]
+    });
+  }
+
+  completeTodo = id => {
+    this.setState({
+      todoItems: this.state.todoItems.map(item => {
+        if(item.id === id) {
+          item.completed = !item.completed;
+        }
+        return item;
+      })
     });
   }
   
@@ -28,7 +40,10 @@ class App extends Component {
     return (
       <div>
         <TodoForm addTodo={this.addTodo} />
-        <TodoList todoItems={this.state.todoItems} />
+        <TodoList
+          todoItems={this.state.todoItems}
+          completeTodo={this.completeTodo}
+        />
       </div>
     );
   }
