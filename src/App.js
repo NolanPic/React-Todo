@@ -35,11 +35,21 @@ class App extends Component {
       })
     });
   }
+
+  clearCompleted = () => {
+    this.setState({
+      todoItems: this.state.todoItems
+        .filter(item => !item.completed)
+    });
+  }
   
   render() {
     return (
       <div>
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm
+          addTodo={this.addTodo}
+          clearCompleted={this.clearCompleted}
+        />
         <TodoList
           todoItems={this.state.todoItems}
           completeTodo={this.completeTodo}

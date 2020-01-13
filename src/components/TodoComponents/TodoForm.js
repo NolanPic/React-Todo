@@ -26,6 +26,11 @@ class TodoForm extends Component {
         });
     }
 
+    handleClearCompleted = e => {
+        e.preventDefault();
+        this.props.clearCompleted();
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -36,6 +41,7 @@ class TodoForm extends Component {
                     onChange={this.handleChange}
                 />
                 <button type="submit">Add</button>
+                <button onClick={this.handleClearCompleted}>Clear completed</button>
             </form>
         );
     }
