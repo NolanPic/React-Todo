@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import { Main } from './components/styled';
 
 class App extends Component {
   // you will need a place to store your state in this component.
@@ -45,7 +46,7 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <Main>
         <TodoForm
           addTodo={this.addTodo}
           clearCompleted={this.clearCompleted}
@@ -54,7 +55,7 @@ class App extends Component {
           todoItems={this.state.todoItems}
           completeTodo={this.completeTodo}
         />
-      </div>
+      </Main>
     );
   }
 }
