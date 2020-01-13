@@ -35,6 +35,7 @@ class TodoForm extends Component {
                     value={this.state.todoText}
                     onChange={this.handleChange}
                 />
+                <button type="submit">Add</button>
             </form>
         );
     }
