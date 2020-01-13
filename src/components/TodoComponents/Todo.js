@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Todo = props => {
+const Todo = ({ item, completeTodo }) => {
 
-    const { item, completeTodo } = props;
+    const { id, task, completed } = item;
 
     const StyledTodo = styled.li`
         cursor: pointer;
-        text-decoration: ${item.completed ? 'line-through' : 'none'}
+        text-decoration: ${completed ? 'line-through' : 'none'}
     `;
 
     return (
-        <StyledTodo onClick={() => completeTodo(item.id)}>{item.task}</StyledTodo>
+        <StyledTodo onClick={() => completeTodo(id)}>{task}</StyledTodo>
     );
 };
 
