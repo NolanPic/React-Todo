@@ -5,7 +5,7 @@ const Todo = props => {
     const { item } = props;
 
     return (
-        <li>{item.text}</li>
+        <li>{item.task}</li>
     );
 };
 
