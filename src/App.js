@@ -11,11 +11,22 @@ class App extends Component {
       todoItems: []
     };
   }
+
+  addTodo = todoText => {
+    const newTodo = {
+      task: todoText,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      todoItems: [ ...this.state.todoItems, newTodo ]
+    });
+  }
   
   render() {
     return (
       <div>
-        <TodoForm />
+        <TodoForm addTodo={this.addTodo} />
       </div>
     );
   }

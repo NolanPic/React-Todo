@@ -19,7 +19,7 @@ class TodoForm extends Component {
         e.preventDefault();
         
         // submit to parent state
-        
+        this.props.addTodo(this.state.todoText);
         // clear form
         this.setState({
             todoText: ''
