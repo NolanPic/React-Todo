@@ -37,14 +37,22 @@ class TodoForm extends Component {
 
         return (
             <StyledTodoForm onSubmit={this.handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="What to do..."
-                    value={this.state.todoText}
-                    onChange={this.handleChange}
-                />
-                <button className="add-todo" type="submit">Add</button>
-                <button className="clear-todos" onClick={this.handleClearCompleted}>Clear completed</button>
+                <div className="input-wrap">
+                    <input
+                        type="text"
+                        placeholder=">"
+                        value={this.state.todoText}
+                        onChange={this.handleChange}
+                    />
+                </div>
+                <div className="actions">
+                    <div className="button-wrap">
+                        <button className="add-todo" type="submit">Add</button>
+                    </div>
+                    <div className="button-wrap">
+                        <button className="clear-todos" onClick={this.handleClearCompleted}>Clear completed</button>
+                    </div>
+                </div>
             </StyledTodoForm>
         );
     }
