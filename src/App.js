@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import { Main } from './components/styled';
+import { saveTodos, getTodos } from './db';
 
 class App extends Component {
   // you will need a place to store your state in this component.
@@ -10,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todoItems: []
+      todoItems: getTodos()
     };
   }
 
@@ -23,7 +24,9 @@ class App extends Component {
 
     this.setState({
       todoItems: [ ...this.state.todoItems, newTodo ]
-    });
+    }, () => saveTodos(this.state.todoItems));
+
+    ;
   }
 
   completeTodo = id => {
@@ -34,14 +37,14 @@ class App extends Component {
         }
         return item;
       })
-    });
+    }, () => saveTodos(this.state.todoItems));
   }
 
   clearCompleted = () => {
     this.setState({
       todoItems: this.state.todoItems
         .filter(item => !item.completed)
-    });
+    }, () => saveTodos(this.state.todoItems));
   }
   
   render() {
