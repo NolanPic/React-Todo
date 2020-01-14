@@ -16,17 +16,18 @@ class App extends Component {
   }
 
   addTodo = todoText => {
-    const newTodo = {
-      task: todoText,
-      id: Date.now(),
-      completed: false
-    };
+    if(todoText.length) {
+      const newTodo = {
+        task: todoText,
+        id: Date.now(),
+        completed: false
+      };
 
-    this.setState({
-      todoItems: [ ...this.state.todoItems, newTodo ]
-    }, () => saveTodos(this.state.todoItems));
-
-    ;
+      this.setState({
+        todoItems: [ ...this.state.todoItems, newTodo ]
+      }, () => saveTodos(this.state.todoItems));
+    }
+    
   }
 
   completeTodo = id => {
